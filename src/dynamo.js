@@ -32,14 +32,14 @@ export async function deleteTodo(id) {
   await docClient.send(new DeleteCommand({ TableName: TABLE, Key: { id } }));
 }
 
-export async function toggleDone(id, completed) {
+export async function updateTodo(id, updates) { 
   await docClient.send(
     new UpdateCommand({
       TableName: TABLE,
       Key: { id },
       UpdateExpression: "SET #done = :val",
-      ExpressionAttributeNames: { "#done": "completed "},
-      ExpressionAttributeValues: { ":val": completed },
+      ExpressionAttributeNames: { "#done": "completed " },
+      ExpressionAttributeValues: { ":val": updates },
     })
   );
 }
