@@ -26,7 +26,7 @@ export async function scanTodos() {
 }
 
 export async function createTodo(todo) {
-  await docClient.send(new PutCommand({ TableName: TABLE, item: todo }));
+  await docClient.send(new PutCommand({ TableName: TABLE, Item: todo }));
 }
 export async function deleteTodo(id) {
   await docClient.send(new DeleteCommand({ TableName: TABLE, Key: { id } }));
