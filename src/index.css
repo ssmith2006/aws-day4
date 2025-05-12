@@ -62,6 +62,9 @@ label{
   gap: 8px;
 }
 
+ul{
+  list-style: none;
+}
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
